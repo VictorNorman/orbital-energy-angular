@@ -1,0 +1,87 @@
+.detailsElemBox2 {
+  position: relative;
+}
+
+.showcase {
+  text-align: left;
+  color: black;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid black;
+  text-decoration: none;
+  aspect-ratio: 1;
+  padding-inline: 8px;
+  font-size: 1.0vw;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.detailedView {
+  padding: 4%;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.aNumber {
+  font-size: 1.0vw;
+  margin-top: 7%;
+  text-align: right;
+}
+
+.aSymbol {
+  font-size: 3vw;
+  font-weight: bold;
+  margin: 2%;
+  display: inline-block;
+}
+
+.aMass {
+  font-size: 1.0vw;
+  margin: 2%;
+  text-align: right;
+}
+
+.aEconfig {
+  font-size: 1.0vw;
+  margin: 2%;
+  vertical-align: 0.5vw;
+  display: inline-block;
+}
+
+.rowSelectedInfo {
+  font-size: 2vw;
+  margin: 2%;
+}
+
+.detailsTempText {
+  padding: 8px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1vw;
+}
+
+.float-right-box {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.crystalline-struct-img {
+  max-width: 60px;
+  padding-left: 70px;
+}
+
+/* Group colors for the detail box showcase */
+.group-12 {
+  background-color: #6480ba;
+}
+
+.group-transition {
+  background-color: #eb4848;
+}
+
+.group-nm {
+  background-color: #ffcc00;
+}
+
+.group-la {
+  background-color: #00cc33;
+}

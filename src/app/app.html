@@ -1,0 +1,19 @@
+<div class="app-container">
+  <nav class="tab-nav">
+    <button
+      [class.active]="activeTab() === 'main'"
+      (click)="activeTab.set('main')"
+    >Main</button>
+    <button
+      [class.active]="activeTab() === 'graphs'"
+      (click)="activeTab.set('graphs')"
+    >New Graphs</button>
+  </nav>
+
+  @if (activeTab() === 'main') {
+    <app-main-tab />
+  }
+  @if (activeTab() === 'graphs') {
+    <app-graphs-tab />
+  }
+</div>

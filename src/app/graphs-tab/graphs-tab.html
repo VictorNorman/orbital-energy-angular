@@ -1,0 +1,99 @@
+<div class="graphs-tab">
+  <div class="y-choice-and-chart-container">
+    <div class="y-menu radio-collection">
+      <div class="menu-label">Choose Y-axis item</div>
+      @for (choice of graphChoices; track choice.value) {
+        <div>
+          <label [for]="'y_' + choice.value">{{ choice.label }}</label>
+          <input
+            type="radio"
+            [id]="'y_' + choice.value"
+            [value]="choice.value"
+            name="y-graph-value"
+            (change)="yChoice.set(choice.value)"
+          />
+        </div>
+      }
+    </div>
+
+    <div class="subchoice-and-chart">
+      <app-graph-sub-choice
+        xOrY="y"
+        [graphChoice]="yChoice()"
+        [(methodOrbChecked)]="yMethodOrb"
+        [(ionizationChecked)]="yIonization"
+        [(electroNegChecked)]="yElectroNeg"
+        [(atomicRadChecked)]="yAtomicRad"
+      />
+
+      <div id="chart-attachment">
+        <canvas #chartCanvas></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dual-thumb slider -->
+  <div class="range_container">
+    <div class="sliders_control">
+      <input
+        id="fromSlider" type="range" min="1" max="118"
+        [value]="fromVal()"
+        [style.background]="sliderBackground()"
+        (input)="onFromSlider($any($event.target).value)"
+      />
+      <input
+        id="toSlider" type="range" min="1" max="118"
+        [value]="toVal()"
+        [style.background]="sliderBackground()"
+        (input)="onToSlider($any($event.target).value)"
+      />
+    </div>
+    <div class="form_control">
+      <div class="form_control_container">
+        <div class="form_control_container__time">From</div>
+        <input
+          class="form_control_container__time__input"
+          type="number" min="1" max="118"
+          [value]="fromVal()"
+          (change)="onFromInput($any($event.target).value)"
+        />
+      </div>
+      <div class="form_control_container">
+        <div class="form_control_container__time">To</div>
+        <input
+          class="form_control_container__time__input"
+          type="number" min="1" max="118"
+          [value]="toVal()"
+          (change)="onToInput($any($event.target).value)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="x-menu-row">
+    <div class="x-menu radio-collection">
+      <div class="menu-label">Choose X-axis item</div>
+      @for (choice of graphChoices; track choice.value) {
+        <div>
+          <label [for]="'x_' + choice.value">{{ choice.label }}</label>
+          <input
+            type="radio"
+            [id]="'x_' + choice.value"
+            [value]="choice.value"
+            name="x-graph-value"
+            (change)="xChoice.set(choice.value)"
+          />
+        </div>
+      }
+    </div>
+
+    <app-graph-sub-choice
+      xOrY="x"
+      [graphChoice]="xChoice()"
+      [(methodOrbChecked)]="xMethodOrb"
+      [(ionizationChecked)]="xIonization"
+      [(electroNegChecked)]="xElectroNeg"
+      [(atomicRadChecked)]="xAtomicRad"
+    />
+  </div>
+</div>

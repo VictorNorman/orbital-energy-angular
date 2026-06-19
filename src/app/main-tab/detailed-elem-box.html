@@ -1,0 +1,46 @@
+<div class="detailedView">
+  @if (!showBox()) {
+    <div class="detailsTempText">
+      <p>Select an element from the periodic table for more details</p>
+    </div>
+  }
+
+  @if (showBox()) {
+    <div class="detailsElemBox2 showcase" [class]="groupClass()">
+      @if (rowSelected()) {
+        <div class="rowSelectedInfo">Row {{ rowSelected() }} selected.</div>
+      }
+
+      @if (selectedEl(); as el) {
+        <div>
+          <span class="aSymbol">{{ el.symbol }}</span>
+          <span class="aEconfig" [innerHTML]="eConfigHtml()"></span>
+        </div>
+        <div class="float-right-box">
+          @if (crystallineImg()) {
+            <img class="crystalline-struct-img" [src]="crystallineImg()" />
+          }
+          <div class="aMass">{{ el.aMass }}{{ el.amassunc }} amu</div>
+          <div class="aNumber">Z = {{ el.number }}</div>
+        </div>
+        <div>Density: {{ el.density }}</div>
+        <div>Melting point: {{ el.meltingPoint }} K</div>
+        <div>Boiling point: {{ el.boilingPoint }} K</div>
+        <div>Oxidation states: {{ el.oxidationStates }}</div>
+        <div>Electronegativity (Pauling): {{ el.electronegativityPauling }}</div>
+        <div>Electronegativity (T&O): {{ el.electronegativityTandO }}</div>
+        <div>First ionization energy: {{ el.firstIonizationEnergy }} eV</div>
+        <div>Valence atomic radius (RDK): {{ el.valenceAtomicRadiusRDK }}</div>
+        <div>Valence atomic radius (Clement): {{ el.valenceAtomicRadiusClement }} pm</div>
+        <div>R001 atomic radius: {{ el.R001AtomicRadius }} pm</div>
+        <div>Van der Waals radius: {{ el.vanderWallRadius }} pm</div>
+        <div>Metallic radius: {{ el.metallicRadius }} pm</div>
+        <div>Covalent radius: {{ el.covalentRadius }} pm</div>
+        <div>Valence eff. nuclear charge (RDK): {{ el.valenceEffectiveNuclearChargeRDK }}</div>
+        <div>Valence eff. nuclear charge (Guerra): {{ el.valenceEffectiveNuclearChargeGuerra }}</div>
+        <div>Electrical conductivity: {{ el.electricalConductivity }} S/m</div>
+        <div>Thermal conductivity: {{ el.thermalConductivity }} W/(mK)</div>
+      }
+    </div>
+  }
+</div>

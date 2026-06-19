@@ -1,0 +1,66 @@
+import XLSX from 'xlsx';
+import { readFileSync, writeFileSync } from 'fs';
+
+const COLUMN_NAMES = [
+  'Element', 'Atomic Number', 'Atomic Mass',
+  'Tantardini and Oganov Electronegativity', "Pauling's Electronegativity",
+  'Density', 'Melting Point', 'Boiling Point',
+  'Zeff - guerra 1s', 'Zeff - guerra 2s', 'Zeff - guerra 2p',
+  'Zeff - guerra 3s', 'Zeff - guerra 3p', 'Zeff - guerra 3d',
+  'Zeff - guerra 4s', 'Zeff - guerra 4p', 'Zeff - guerra 4d', 'Zeff - guerra 4f',
+  'Zeff - guerra 5s', 'Zeff - guerra 5p', 'Zeff - guerra 5d', 'Zeff - guerra 5f',
+  'Zeff - guerra 6s', 'Zeff - guerra 6p', 'Zeff - guerra 6d',
+  'Zeff - guerra 7s', 'Zeff - guerra 7p',
+  'Zeff - slater 1s', 'Zeff - slater 2s', 'Zeff - slater 2p',
+  'Zeff - slater 3s', 'Zeff - slater 3p', 'Zeff - slater 4s',
+  'Zeff - rdk 1s', 'Zeff - rdk 2s', 'Zeff - rdk 2p',
+  'Zeff - rdk 3s', 'Zeff - rdk 3p', 'Zeff - rdk 4s',
+  'Rp - guerra 1s', 'Rp - guerra 2s', 'Rp - guerra 2p',
+  'Rp - guerra 3s', 'Rp - guerra 3p', 'Rp - guerra 3d',
+  'Rp - guerra 4s', 'Rp - guerra 4p', 'Rp - guerra 4d', 'Rp - guerra 4f',
+  'Rp - guerra 5s', 'Rp - guerra 5p', 'Rp - guerra 5d', 'Rp - guerra 5f',
+  'Rp - guerra 6s', 'Rp - guerra 6p', 'Rp - guerra 6d',
+  'Rp - guerra 7s', 'Rp - guerra 7p',
+  'Rp - rdk 1s', 'Rp - rdk 2s', 'Rp - rdk 2p',
+  'Rp - rdk 3s', 'Rp - rdk 3p', 'Rp - rdk 4s',
+  'Rp - R0.001/Rahm', 'Rp - Van der Waals', 'Rp - Metallic',
+  'Rp - Covalent', 'Rp - Clementi', 'Rp - Slater', 'Rp - Ghosh',
+  'KE - guerra 1s', 'KE - guerra 2s', 'KE - guerra 2p',
+  'KE - guerra 3s', 'KE - guerra 3p', 'KE - guerra 3d',
+  'KE - guerra 4s', 'KE - guerra 4p', 'KE - guerra 4d', 'KE - guerra 4f',
+  'KE - guerra 5s', 'KE - guerra 5p', 'KE - guerra 5d', 'KE - guerra 5f',
+  'KE - guerra 6s', 'KE - guerra 6p', 'KE - guerra 6d',
+  'KE - guerra 7s', 'KE - guerra 7p',
+  'KE - rdk 1s', 'KE - rdk 2s', 'KE - rdk 2p',
+  'KE - rdk 3s', 'KE - rdk 3p', 'KE - rdk 4s',
+  'PE - guerra 1s', 'PE - guerra 2s', 'PE - guerra 2p',
+  'PE - guerra 3s', 'PE - guerra 3p', 'PE - guerra 3d',
+  'PE - guerra 4s', 'PE - guerra 4p', 'PE - guerra 4d', 'PE - guerra 4f',
+  'PE - guerra 5s', 'PE - guerra 5p', 'PE - guerra 5d', 'PE - guerra 5f',
+  'PE - guerra 6s', 'PE - guerra 6p', 'PE - guerra 6d',
+  'PE - guerra 7s', 'PE - guerra 7p',
+  'PE - rdk 1s', 'PE - rdk 2s', 'PE - rdk 2p',
+  'PE - rdk 3s', 'PE - rdk 3p', 'PE - rdk 4s',
+  'TE - guerra 1s', 'TE - guerra 2s', 'TE - guerra 2p',
+  'TE - guerra 3s', 'TE - guerra 3p', 'TE - guerra 3d',
+  'TE - guerra 4s', 'TE - guerra 4p', 'TE - guerra 4d', 'TE - guerra 4f',
+  'TE - guerra 5s', 'TE - guerra 5p', 'TE - guerra 5d', 'TE - guerra 5f',
+  'TE - guerra 6s', 'TE - guerra 6p', 'TE - guerra 6d',
+  'TE - guerra 7s', 'TE - guerra 7p',
+  'TE - rdk 1s', 'TE - rdk 2s', 'TE - rdk 2p',
+  'TE - rdk 3s', 'TE - rdk 3p', 'TE - rdk 4s',
+  'Ionization Energy: 1st', 'Ionization Energy: 2nd', 'Ionization Energy: 3rd',
+  'Ionization Energy: 4th', 'Ionization Energy: 5th', 'Ionization Energy: 6th',
+  'Ionization Energy: 7th', 'Ionization Energy: 8th', 'Ionization Energy: 9th',
+  'Ionization Energy: 10th',
+  'Rp - Guerra (valence)', 'Rp - RDK (valence)',
+];
+
+const wb = XLSX.readFile('/Users/vtn2/src/orbital-energy-web/src/assets/081425Data.xlsx');
+const data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {
+  range: 'C5:FD122',
+  header: COLUMN_NAMES,
+});
+
+writeFileSync('/Users/vtn2/src/orbital-energy-angular/public/element-data.json', JSON.stringify(data));
+console.log('Converted', data.length, 'rows to public/element-data.json');
