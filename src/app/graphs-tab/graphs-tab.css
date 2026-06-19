@@ -18,8 +18,12 @@
 .axis-radio-group {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px 0;
+  gap: 0;
+  padding: 4px 0;
+}
+
+.axis-radio-group ::ng-deep .mat-mdc-radio-button .mdc-radio {
+  padding: 4px;
 }
 
 .subchoice-and-chart {
