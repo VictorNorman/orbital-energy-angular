@@ -1,19 +1,12 @@
-<div class="app-container">
-  <nav class="tab-nav">
-    <button
-      [class.active]="activeTab() === 'main'"
-      (click)="activeTab.set('main')"
-    >Main</button>
-    <button
-      [class.active]="activeTab() === 'graphs'"
-      (click)="activeTab.set('graphs')"
-    >New Graphs</button>
-  </nav>
-
-  @if (activeTab() === 'main') {
-    <app-main-tab />
-  }
-  @if (activeTab() === 'graphs') {
-    <app-graphs-tab />
-  }
-</div>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Periodic Table">
+    <div class="tab-content">
+      <app-main-tab />
+    </div>
+  </mat-tab>
+  <mat-tab label="Graphs">
+    <div class="tab-content">
+      <app-graphs-tab />
+    </div>
+  </mat-tab>
+</mat-tab-group>

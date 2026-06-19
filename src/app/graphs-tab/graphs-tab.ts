@@ -1,5 +1,11 @@
 import { Component, ElementRef, OnDestroy, effect, signal, viewChild } from '@angular/core';
 import { httpResource } from '@angular/common/http';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 import { Chart, type ScatterDataPoint } from 'chart.js/auto';
 import { elements } from '../data/elements';
 import { GraphSubChoice } from './graph-sub-choice/graph-sub-choice';
@@ -73,7 +79,15 @@ function debounce<T extends (...args: unknown[]) => void>(fn: T, ms: number): T 
 
 @Component({
   selector: 'app-graphs-tab',
-  imports: [GraphSubChoice],
+  imports: [
+    GraphSubChoice,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule,
+    MatCardModule,
+    FormsModule,
+  ],
   templateUrl: './graphs-tab.html',
   styleUrl: './graphs-tab.css',
 })

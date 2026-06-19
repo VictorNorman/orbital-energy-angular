@@ -1,9 +1,11 @@
 import { Component, computed, inject } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { ElementStateService } from '../services/element-state.service';
 import { elements, startElemInPeriodicTableRows } from '../data/elements';
 
 @Component({
   selector: 'app-detailed-elem-box',
+  imports: [MatCardModule],
   templateUrl: './detailed-elem-box.html',
   styleUrl: './detailed-elem-box.css',
 })

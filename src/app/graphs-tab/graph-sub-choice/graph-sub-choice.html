@@ -12,17 +12,22 @@
       <tbody>
         @for (method of methods; track method) {
           <tr>
-            <td>{{ method === 'guerra' ? 'Guerra' : method === 'slater' ? 'Slater' : 'RDK' }}</td>
+            <td class="method-label">{{ method === 'guerra' ? 'Guerra' : method === 'slater' ? 'Slater' : 'RDK' }}</td>
             @for (orb of orbitals; track orb) {
               <td>
                 @if (hasOrbital(method, orb)) {
-                  <input
-                    [type]="isCheckbox() ? 'checkbox' : 'radio'"
-                    [id]="domId('mo', method, orb)"
-                    [name]="xOrY() + '-method-orb'"
-                    [checked]="isMethodOrbChecked(method, orb)"
-                    (change)="onMethodOrbChange(method, orb, $any($event.target).checked)"
-                  />
+                  @if (isCheckbox()) {
+                    <mat-checkbox
+                      [checked]="isMethodOrbChecked(method, orb)"
+                      (change)="onMethodOrbChange(method, orb, $event.checked)"
+                    />
+                  } @else {
+                    <mat-radio-button
+                      [name]="xOrY() + '-method-orb'"
+                      [checked]="isMethodOrbChecked(method, orb)"
+                      (change)="onMethodOrbChange(method, orb, true)"
+                    />
+                  }
                 }
               </td>
             }
@@ -33,81 +38,66 @@
   }
 
   @if (showIonization()) {
-    <table class="subChoiceTable">
-      <tbody>
-        <tr>
-          @for (order of ionizationOrders; track order) {
-            <td>
-              <label>
-                <input
-                  [type]="isCheckbox() ? 'checkbox' : 'radio'"
-                  [id]="domId('ie', order)"
-                  [name]="xOrY() + '-ionization'"
-                  [checked]="isIonizationChecked(order)"
-                  (change)="onIonizationChange(order, $any($event.target).checked)"
-                />
-                {{ order }}
-              </label>
-            </td>
-          }
-        </tr>
-      </tbody>
-    </table>
+    <div class="inline-choice-row">
+      @for (order of ionizationOrders; track order) {
+        @if (isCheckbox()) {
+          <mat-checkbox
+            [checked]="isIonizationChecked(order)"
+            (change)="onIonizationChange(order, $event.checked)"
+          >{{ order }}</mat-checkbox>
+        } @else {
+          <mat-radio-button
+            [name]="xOrY() + '-ionization'"
+            [checked]="isIonizationChecked(order)"
+            (change)="onIonizationChange(order, true)"
+          >{{ order }}</mat-radio-button>
+        }
+      }
+    </div>
   }
 
   @if (showElectroNeg()) {
-    <table class="subChoiceTable">
-      <tbody>
-        <tr>
-          <td>
-            <label>
-              <input
-                [type]="isCheckbox() ? 'checkbox' : 'radio'"
-                [id]="domId('en', 'to')"
-                [name]="xOrY() + '-electroneg'"
-                [checked]="isElectroNegChecked('to')"
-                (change)="onElectroNegChange('to', $any($event.target).checked)"
-              />
-              Tantardini &amp; Oganov
-            </label>
-          </td>
-          <td>
-            <label>
-              <input
-                [type]="isCheckbox() ? 'checkbox' : 'radio'"
-                [id]="domId('en', 'pauling')"
-                [name]="xOrY() + '-electroneg'"
-                [checked]="isElectroNegChecked('pauling')"
-                (change)="onElectroNegChange('pauling', $any($event.target).checked)"
-              />
-              Pauling's
-            </label>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="inline-choice-row">
+      @if (isCheckbox()) {
+        <mat-checkbox
+          [checked]="isElectroNegChecked('to')"
+          (change)="onElectroNegChange('to', $event.checked)"
+        >Tantardini &amp; Oganov</mat-checkbox>
+        <mat-checkbox
+          [checked]="isElectroNegChecked('pauling')"
+          (change)="onElectroNegChange('pauling', $event.checked)"
+        >Pauling's</mat-checkbox>
+      } @else {
+        <mat-radio-button
+          [name]="xOrY() + '-electroneg'"
+          [checked]="isElectroNegChecked('to')"
+          (change)="onElectroNegChange('to', true)"
+        >Tantardini &amp; Oganov</mat-radio-button>
+        <mat-radio-button
+          [name]="xOrY() + '-electroneg'"
+          [checked]="isElectroNegChecked('pauling')"
+          (change)="onElectroNegChange('pauling', true)"
+        >Pauling's</mat-radio-button>
+      }
+    </div>
   }
 
   @if (showAtomicRad()) {
-    <table class="subChoiceTable">
-      <tbody>
-        <tr>
-          @for (method of atomicRadMethods; track method) {
-            <td>
-              <label>
-                <input
-                  [type]="isCheckbox() ? 'checkbox' : 'radio'"
-                  [id]="domId('ar', method)"
-                  [name]="xOrY() + '-atomicrad'"
-                  [checked]="isAtomicRadChecked(method)"
-                  (change)="onAtomicRadChange(method, $any($event.target).checked)"
-                />
-                {{ method }}
-              </label>
-            </td>
-          }
-        </tr>
-      </tbody>
-    </table>
+    <div class="inline-choice-row">
+      @for (method of atomicRadMethods; track method) {
+        @if (isCheckbox()) {
+          <mat-checkbox
+            [checked]="isAtomicRadChecked(method)"
+            (change)="onAtomicRadChange(method, $event.checked)"
+          >{{ method }}</mat-checkbox>
+        } @else {
+          <mat-radio-button
+            [name]="xOrY() + '-atomicrad'"
+            [checked]="isAtomicRadChecked(method)"
+            (change)="onAtomicRadChange(method, true)"
+          >{{ method }}</mat-radio-button>
+        }
+      }
+    </div>
   }
 </div>

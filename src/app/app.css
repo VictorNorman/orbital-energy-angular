@@ -1,35 +1,3 @@
-.app-container {
-  font-family: Arial, sans-serif;
-  max-width: 100vw;
-  padding: 0;
-}
-
-.tab-nav {
-  display: flex;
-  gap: 0;
-  background: #333;
-  padding: 8px 16px 0;
-}
-
-.tab-nav button {
-  background: #555;
-  color: #ccc;
-  border: none;
-  border-bottom: none;
-  padding: 8px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 4px 4px 0 0;
-  margin-right: 4px;
-}
-
-.tab-nav button.active {
-  background: white;
-  color: #333;
-  font-weight: bold;
-}
-
-.tab-nav button:hover:not(.active) {
-  background: #666;
-  color: white;
+.tab-content {
+  padding: 16px;
 }

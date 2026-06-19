@@ -1,75 +1,93 @@
-.detailsElemBox2 {
+.placeholder-card {
+  min-width: 200px;
+}
+
+.placeholder-text {
+  color: #888;
+  font-style: italic;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1vw;
+}
+
+.detail-card {
+  min-width: 260px;
+  max-width: 320px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1vw;
+}
+
+.detail-header {
   position: relative;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #999;
 }
 
-.showcase {
-  text-align: left;
-  color: black;
-  box-sizing: border-box;
-  border-radius: 3px;
-  border: 1px solid black;
-  text-decoration: none;
-  aspect-ratio: 1;
-  padding-inline: 8px;
-  font-size: 1.0vw;
-  font-family: "Times New Roman", Times, serif;
+.header-left {
+  display: flex;
+  flex-direction: column;
 }
 
-.detailedView {
-  padding: 4%;
-  display: inline-block;
-  font-family: "Times New Roman", Times, serif;
+.header-right {
+  text-align: right;
 }
 
 .aNumber {
-  font-size: 1.0vw;
-  margin-top: 7%;
+  font-size: 1vw;
+  margin-top: 4px;
   text-align: right;
 }
 
 .aSymbol {
   font-size: 3vw;
   font-weight: bold;
-  margin: 2%;
-  display: inline-block;
 }
 
 .aMass {
-  font-size: 1.0vw;
-  margin: 2%;
+  font-size: 1vw;
   text-align: right;
 }
 
 .aEconfig {
-  font-size: 1.0vw;
-  margin: 2%;
-  vertical-align: 0.5vw;
-  display: inline-block;
-}
-
-.rowSelectedInfo {
-  font-size: 2vw;
-  margin: 2%;
-}
-
-.detailsTempText {
-  padding: 8px;
-  font-family: "Times New Roman", Times, serif;
   font-size: 1vw;
 }
 
-.float-right-box {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-}
-
 .crystalline-struct-img {
-  max-width: 60px;
-  padding-left: 70px;
+  max-width: 50px;
 }
 
-/* Group colors for the detail box showcase */
+.row-selected-info {
+  font-size: 1.5vw;
+  margin-bottom: 8px;
+}
+
+.properties-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9vw;
+}
+
+.properties-table tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.properties-table td {
+  padding: 2px 4px;
+}
+
+.prop-label {
+  color: #555;
+  font-style: italic;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+/* Group colors */
 .group-12 {
   background-color: #6480ba;
 }

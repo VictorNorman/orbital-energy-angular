@@ -1,46 +1,53 @@
-<div class="detailedView">
-  @if (!showBox()) {
-    <div class="detailsTempText">
-      <p>Select an element from the periodic table for more details</p>
-    </div>
-  }
+@if (!showBox()) {
+  <mat-card class="placeholder-card">
+    <mat-card-content>
+      <p class="placeholder-text">Select an element from the periodic table for more details</p>
+    </mat-card-content>
+  </mat-card>
+}
 
-  @if (showBox()) {
-    <div class="detailsElemBox2 showcase" [class]="groupClass()">
+@if (showBox()) {
+  <mat-card class="detail-card">
+    <mat-card-content>
       @if (rowSelected()) {
-        <div class="rowSelectedInfo">Row {{ rowSelected() }} selected.</div>
+        <div class="row-selected-info">Row {{ rowSelected() }} selected.</div>
       }
 
       @if (selectedEl(); as el) {
-        <div>
-          <span class="aSymbol">{{ el.symbol }}</span>
-          <span class="aEconfig" [innerHTML]="eConfigHtml()"></span>
+        <div class="detail-header showcase" [class]="groupClass()">
+          <div class="header-left">
+            <span class="aSymbol">{{ el.symbol }}</span>
+            <span class="aEconfig" [innerHTML]="eConfigHtml()"></span>
+          </div>
+          <div class="header-right">
+            @if (crystallineImg()) {
+              <img class="crystalline-struct-img" [src]="crystallineImg()" />
+            }
+            <div class="aMass">{{ el.aMass }}{{ el.amassunc }} amu</div>
+            <div class="aNumber">Z = {{ el.number }}</div>
+          </div>
         </div>
-        <div class="float-right-box">
-          @if (crystallineImg()) {
-            <img class="crystalline-struct-img" [src]="crystallineImg()" />
-          }
-          <div class="aMass">{{ el.aMass }}{{ el.amassunc }} amu</div>
-          <div class="aNumber">Z = {{ el.number }}</div>
-        </div>
-        <div>Density: {{ el.density }}</div>
-        <div>Melting point: {{ el.meltingPoint }} K</div>
-        <div>Boiling point: {{ el.boilingPoint }} K</div>
-        <div>Oxidation states: {{ el.oxidationStates }}</div>
-        <div>Electronegativity (Pauling): {{ el.electronegativityPauling }}</div>
-        <div>Electronegativity (T&O): {{ el.electronegativityTandO }}</div>
-        <div>First ionization energy: {{ el.firstIonizationEnergy }} eV</div>
-        <div>Valence atomic radius (RDK): {{ el.valenceAtomicRadiusRDK }}</div>
-        <div>Valence atomic radius (Clement): {{ el.valenceAtomicRadiusClement }} pm</div>
-        <div>R001 atomic radius: {{ el.R001AtomicRadius }} pm</div>
-        <div>Van der Waals radius: {{ el.vanderWallRadius }} pm</div>
-        <div>Metallic radius: {{ el.metallicRadius }} pm</div>
-        <div>Covalent radius: {{ el.covalentRadius }} pm</div>
-        <div>Valence eff. nuclear charge (RDK): {{ el.valenceEffectiveNuclearChargeRDK }}</div>
-        <div>Valence eff. nuclear charge (Guerra): {{ el.valenceEffectiveNuclearChargeGuerra }}</div>
-        <div>Electrical conductivity: {{ el.electricalConductivity }} S/m</div>
-        <div>Thermal conductivity: {{ el.thermalConductivity }} W/(mK)</div>
+
+        <table class="properties-table">
+          <tr><td class="prop-label">Density</td><td>{{ el.density }}</td></tr>
+          <tr><td class="prop-label">Melting point</td><td>{{ el.meltingPoint }} K</td></tr>
+          <tr><td class="prop-label">Boiling point</td><td>{{ el.boilingPoint }} K</td></tr>
+          <tr><td class="prop-label">Oxidation states</td><td>{{ el.oxidationStates }}</td></tr>
+          <tr><td class="prop-label">Electronegativity (Pauling)</td><td>{{ el.electronegativityPauling }}</td></tr>
+          <tr><td class="prop-label">Electronegativity (T&amp;O)</td><td>{{ el.electronegativityTandO }}</td></tr>
+          <tr><td class="prop-label">1st ionization energy</td><td>{{ el.firstIonizationEnergy }} eV</td></tr>
+          <tr><td class="prop-label">Valence atomic radius (RDK)</td><td>{{ el.valenceAtomicRadiusRDK }}</td></tr>
+          <tr><td class="prop-label">Valence atomic radius (Clement)</td><td>{{ el.valenceAtomicRadiusClement }} pm</td></tr>
+          <tr><td class="prop-label">R001 atomic radius</td><td>{{ el.R001AtomicRadius }} pm</td></tr>
+          <tr><td class="prop-label">Van der Waals radius</td><td>{{ el.vanderWallRadius }} pm</td></tr>
+          <tr><td class="prop-label">Metallic radius</td><td>{{ el.metallicRadius }} pm</td></tr>
+          <tr><td class="prop-label">Covalent radius</td><td>{{ el.covalentRadius }} pm</td></tr>
+          <tr><td class="prop-label">Valence Zeff (RDK)</td><td>{{ el.valenceEffectiveNuclearChargeRDK }}</td></tr>
+          <tr><td class="prop-label">Valence Zeff (Guerra)</td><td>{{ el.valenceEffectiveNuclearChargeGuerra }}</td></tr>
+          <tr><td class="prop-label">Electrical conductivity</td><td>{{ el.electricalConductivity }} S/m</td></tr>
+          <tr><td class="prop-label">Thermal conductivity</td><td>{{ el.thermalConductivity }} W/(mK)</td></tr>
+        </table>
       }
-    </div>
-  }
-</div>
+    </mat-card-content>
+  </mat-card>
+}

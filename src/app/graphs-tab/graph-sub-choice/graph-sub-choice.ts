@@ -1,4 +1,6 @@
 import { Component, computed, input, model } from '@angular/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 export const GUERRA_ORBITALS = ['1s','2s','2p','3s','3p','3d','4s','4p','4d','4f','5s','5p','5d','5f','6s','6p','6d','7s','7p'];
 export const SLATER_ORBITALS = ['1s','2s','2p','3s','3p'];
@@ -26,6 +28,7 @@ function hasOrbital(method: Method, orbital: string): boolean {
 
 @Component({
   selector: 'app-graph-sub-choice',
+  imports: [MatCheckboxModule, MatRadioModule],
   templateUrl: './graph-sub-choice.html',
   styleUrl: './graph-sub-choice.css',
 })
