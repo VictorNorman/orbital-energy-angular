@@ -88,20 +88,18 @@
 }
 
 /* Group colors */
-.group-col1  { background-color: #ffebee; }
-.group-noble { background-color: #e0f7fa; }
 .group-12 {
-  background-color: #6480ba;
+  background-color: #fbb4ae;
 }
 
 .group-transition {
-  background-color: #f3e5f5;
+  background-color: #ccebc5;
 }
 
 .group-nm {
-  background-color: #e8f5e9;
+  background-color: #b3cde3;
 }
 
 .group-la {
-  background-color: #00cc33;
+  background-color: #decbe4;
 }

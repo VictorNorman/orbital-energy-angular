@@ -49,9 +49,7 @@
 }
 
 /* Group colors */
-.group-col1  { background-color: #ffebee; color: #ffcdd2; }
-.group-noble { background-color: #e0f7fa; color: #b2ebf2; }
-.group-12 { background-color: #6480ba; color: black; }
-.group-transition { background-color: #f3e5f5; color: #e1bee7; }
-.group-nm { background-color: #e8f5e9; color: #c8e6c9; }
-.group-la { background-color: #00cc33; color: black; }
+.group-12 { background-color: #fbb4ae; color: black; }
+.group-transition { background-color: #ccebc5; color: black; }
+.group-nm { background-color: #b3cde3; color: black; }
+.group-la { background-color: #decbe4; color: black; }
