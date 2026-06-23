@@ -1,0 +1,185 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 40px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── Hero ──────────────────────────────────────── */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-circles {
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  margin: 0;
+  color: #222;
+}
+
+.hero-subtitle {
+  font-size: 0.88rem;
+  letter-spacing: 0.2em;
+  color: #555;
+  margin: 0;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #888;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #26a69a;
+}
+
+/* ── Stats ─────────────────────────────────────── */
+.stats-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #f0f0f0 !important;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.1;
+}
+
+/* ── Divider ───────────────────────────────────── */
+.section-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
+}
+
+/* ── Methodology ───────────────────────────────── */
+.methodology-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.methodology-btn {
+  letter-spacing: 0.04em;
+}
+
+.comparison-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 0;
+}
+
+.comparison-card {
+  flex: 1;
+}
+
+.virial-card {
+  border: 2px solid #26a69a !important;
+}
+
+.comparison-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.comparison-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: #222;
+}
+
+.virial-title {
+  color: #26a69a;
+}
+
+.comparison-text {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.65;
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+.comparison-equation {
+  font-size: 1rem;
+  font-style: italic;
+  color: #333;
+}
+
+.vs-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  flex-shrink: 0;
+}
+
+/* ── Periodic Table Section ────────────────────── */
+.ptable-section {
+  border: 2px solid #26a69a;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+}
+
+.ptable-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #222;
+}
+
+.ptable-subtitle {
+  font-size: 0.82rem;
+  color: #666;
+  margin: 0 0 12px 0;
+}

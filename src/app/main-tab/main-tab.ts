@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { ElementsTable } from './elements-table';
 
 @Component({
   selector: 'app-main-tab',
-  imports: [ElementsTable],
-  template: `
-    <h2>Main</h2>
-    <app-elements-table />
-  `,
-  styles: [`h2 { margin-bottom: 1rem; }`],
+  imports: [ElementsTable, MatCardModule, MatButtonModule],
+  templateUrl: './main-tab.html',
+  styleUrl: './main-tab.css',
 })
 export class MainTab { }

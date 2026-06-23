@@ -1,0 +1,91 @@
+<div class="main-content">
+
+  <!-- Hero -->
+  <div class="hero-section">
+    <div class="hero-brand">
+      <svg class="hero-circles" width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <circle cx="36" cy="36" r="34" stroke="#333" stroke-width="1.5"/>
+        <circle cx="36" cy="36" r="25" stroke="#333" stroke-width="1.5"/>
+        <circle cx="36" cy="36" r="16" stroke="#333" stroke-width="1.5"/>
+        <circle cx="36" cy="36" r="7" stroke="#333" stroke-width="1.5"/>
+      </svg>
+      <h1 class="hero-title">V O C O E</h1>
+    </div>
+    <p class="hero-subtitle">Virial Orbitals and Canonical Orbital Energies</p>
+    <input
+      class="search-input"
+      type="text"
+      placeholder="search atomic names, atomic numbers, diatomic molecules..."
+    />
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">ORBITALS</div>
+        <div class="stat-value">100+</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">ATOMS</div>
+        <div class="stat-value">20+</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">MOLECULES &amp; IONS</div>
+        <div class="stat-value">20+</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- Methodology -->
+  <div class="methodology-section">
+    <button mat-stroked-button class="methodology-btn">Scientific Methodology</button>
+
+    <div class="comparison-row">
+      <mat-card class="comparison-card">
+        <mat-card-content>
+          <div class="comparison-content">
+            <h3 class="comparison-title">Standard&nbsp; Canonical Orbitals</h3>
+            <p class="comparison-text">
+              Standard molecular orbital energies derived from canonical Hartree-Fock or DFT equations
+              approximate localized eigenvalues, but they fundamentally violate the Virial Theorem under
+              continuous coordinate scaling transformations.
+            </p>
+            <div class="comparison-equation">2t<sub>i</sub> + v<sub>i</sub> ≠ 0</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="vs-badge">VS</div>
+
+      <mat-card class="comparison-card virial-card">
+        <mat-card-content>
+          <div class="comparison-content">
+            <h3 class="comparison-title virial-title">Our Virial Approach</h3>
+            <p class="comparison-text">
+              Our new approach rigorously scales coordinates to enforce strict Virial compliance.
+              COVOE maps consistent energy limits and yields exact kinetic-to-potential partitions.
+            </p>
+            <div class="comparison-equation">2t<sub>i</sub> + v<sub>i</sub> = 0</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- Periodic Table -->
+  <div class="ptable-section">
+    <div class="ptable-header">
+      <h2 class="ptable-title">Interactive Periodic Table Explorer</h2>
+      <p class="ptable-subtitle">Click on an element to filter and explore both canonical and virial orbital energies.</p>
+    </div>
+    <app-elements-table />
+  </div>
+
+</div>

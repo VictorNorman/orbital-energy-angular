@@ -1,31 +1,29 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-}
-
-.innerTop {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  gap: 16px;
 }
 
 .elements {
   font-size: 1.15vw;
-  width: 80%;
-  flex-shrink: 0;
+  width: 100%;
+  background-color: #9e9e9e;
+  border-radius: 4px;
+  padding: 2px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
 }
 
 .row {
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
+  display: contents;
 }
 
 .element {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 5vw;
+  aspect-ratio: 1;
   color: black;
   box-sizing: border-box;
   border-radius: 3px;
@@ -34,7 +32,6 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  aspect-ratio: 1;
   user-select: none;
 }
 
