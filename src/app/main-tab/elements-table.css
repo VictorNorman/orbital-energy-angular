@@ -7,9 +7,6 @@
 .elements {
   font-size: 1.15vw;
   width: 100%;
-  background-color: #9e9e9e;
-  border-radius: 4px;
-  padding: 2px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(18, 1fr);
@@ -52,7 +49,9 @@
 }
 
 /* Group colors */
+.group-col1  { background-color: #ffebee; color: #ffcdd2; }
+.group-noble { background-color: #e0f7fa; color: #b2ebf2; }
 .group-12 { background-color: #6480ba; color: black; }
-.group-transition { background-color: #eb4848; color: black; }
-.group-nm { background-color: #ffcc00; color: black; }
+.group-transition { background-color: #f3e5f5; color: #e1bee7; }
+.group-nm { background-color: #e8f5e9; color: #c8e6c9; }
 .group-la { background-color: #00cc33; color: black; }
