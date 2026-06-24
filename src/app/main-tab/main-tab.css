@@ -163,6 +163,16 @@
   flex-shrink: 0;
 }
 
+/* ── Version badge ─────────────────────────────── */
+.version-badge {
+  position: fixed;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.7rem;
+  color: #bbb;
+  pointer-events: none;
+}
+
 /* ── Periodic Table Section ────────────────────── */
 .ptable-section {
   border: 2px solid #26a69a;
